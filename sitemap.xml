@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>https://ryanavella.github.io/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://ryanavella.github.io/about/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://ryanavella.github.io/posts/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://ryanavella.github.io/posts/md-test/</loc>
+            
+                <lastmod>2020-10-01</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://ryanavella.github.io/tags/</loc>
+            
+        </url>
+    
+</urlset>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://ryanavella.github.io/sitemap.xml

@@ -1,0 +1,6 @@
+[book]
+authors = ["Ryan Avella"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Ryan's Blog"

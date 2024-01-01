@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "lib/*",
+]
+resolver = "2"
+
+[profile.release]
+lto = true
+debug = false
+codegen-units = 1
+strip = true
+incremental = false
+
+[profile.bloat]
+inherits = "release"
+strip = false

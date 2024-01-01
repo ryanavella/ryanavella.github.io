@@ -1,6 +1,11 @@
 # Building
 
 ```
-chmod +x build.sh
 ./build.sh
+```
+
+# Serving
+
+```
+./serve.sh
 ```

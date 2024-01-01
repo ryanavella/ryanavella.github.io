@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Calculate characteristic impedance from trace width, substrate thickness, and dielectric constant.">
+  <title>Microstrip Impedance Calculator</title>
+  <link rel="stylesheet" href="/minimal.css">
+  <link rel="stylesheet" href="/rainbow.min.css">
+</head>
+
+<body>
+  <script src="/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import init, { show_z } from './mscalc.js';
+
+    async function run() {
+      await init();
+      const widthInput = document.getElementById('width');
+      const heightInput = document.getElementById('height');
+      const erInput = document.getElementById('er');
+
+      const calculate = () => {
+        const width = parseFloat(widthInput.value) || 0;
+        const height = parseFloat(heightInput.value) || 0;
+        const er = parseFloat(erInput.value) || 0;
+        show_z(width, height, er);
+      };
+      widthInput.addEventListener('change', calculate);
+      heightInput.addEventListener('change', calculate);
+      erInput.addEventListener('change', calculate);
+      calculate();
+    }
+    run();
+  </script>
+  <main>
+    <div>
+      <h1>Microstrip Impedance Calculator</h1>
+      <div>
+        <label for="width">width (µm)</label>
+        <input class="num" type="number" name="width" id="width" value="127" step="1.0">
+      </div>
+      <div>
+        <label for="height">height (µm)</label>
+        <input class="num" type="number" name="height" id="height" value="127" step="1.0">
+      </div>
+      <div>
+        <label for="er">εr</label>
+        <input class="num" type="number" name="er" id="er" value="9.6" step="0.1">
+      </div>
+      <div>
+        <label for="z_result">Impedance</label>
+        <output id="z_result" name="z_result" for="width height er"></output>
+      </div>
+    </div>
+    <br><hr>
+    <p><a href="https://github.com/ryanavella/ryanavella.github.io/blob/main/lib/mscalc">Source code</a></p>
+  </main>
+</body>
+
+</html>

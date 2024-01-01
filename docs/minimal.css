@@ -1,0 +1,61 @@
+body {
+    color: #333;
+    font-family: Liberation Sans, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    margin: auto;
+    max-width: 65ch;
+}
+
+a {
+    color: #c33;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote,
+q {
+    border-left: solid 4px #ccc;
+    padding: 0.5em 0 0.5em 1em;
+}
+
+button,
+input,
+textarea,
+select {
+    background-color: #eee;
+    border: 1px solid #999;   
+    border-radius: .25em;
+    font-size: 22px;
+    margin-bottom: 1em;
+    padding: 0.3em;
+}
+
+input.num {
+    width: 10em;
+}
+
+label,
+legend {
+    display: block;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    padding: 0.3em;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ddd;
+}

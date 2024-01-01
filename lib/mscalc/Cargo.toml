@@ -1,7 +1,11 @@
 [package]
 name = "mscalc"
 version = "0.1.0"
+authors = "Ryan Avella"
 edition = "2021"
+description = "Calculate characteristic impedance from trace width, substrate thickness, and dielectric constant."
+license = "MIT OR Apache-2.0"
+publish = false
 
 [lib]
 crate-type = ["cdylib"]

@@ -2,6 +2,7 @@
 extern crate alloc;
 use alloc::format;
 
+use gloo::utils::document;
 use wasm_bindgen::prelude::*;
 use web_sys::HtmlInputElement;
 
@@ -12,7 +13,7 @@ const Z_F: f64 = 376.73031366857;
 
 #[wasm_bindgen]
 pub fn show_z(w: f64, h: f64, er: f64) {
-    let document = web_sys::window().unwrap().document().unwrap();
+    let document = document();
 
     let set_elem = |elem, s| {
         document

@@ -14,26 +14,9 @@
   <script src="/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
   <script type="module">
-    import init, { show_z } from './mscalc.js';
+    import init from './mscalc.js';
 
-    async function run() {
-      await init();
-      const widthInput = document.getElementById('width');
-      const heightInput = document.getElementById('height');
-      const erInput = document.getElementById('er');
-
-      const calculate = () => {
-        const width = parseFloat(widthInput.value) || 0;
-        const height = parseFloat(heightInput.value) || 0;
-        const er = parseFloat(erInput.value) || 0;
-        show_z(width, height, er);
-      };
-      widthInput.addEventListener('change', calculate);
-      heightInput.addEventListener('change', calculate);
-      erInput.addEventListener('change', calculate);
-      calculate();
-    }
-    run();
+    init();
   </script>
   <main>
     <div>

@@ -16,13 +16,9 @@ wasm-bindgen = "0.2.89"
 [dependencies.gloo]
 version =  "0.11.0"
 features = [
+  'events',
   'utils',
 ]
 
 [dependencies.web-sys]
 version = "0.3.66"
-features = [
-  'Document',
-  'HtmlInputElement',
-  'Window',
-]

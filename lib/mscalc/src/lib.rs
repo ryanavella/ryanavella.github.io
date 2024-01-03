@@ -2,6 +2,7 @@
 extern crate alloc;
 use alloc::format;
 
+use gloo::events::EventListener;
 use gloo::utils::document;
 use wasm_bindgen::prelude::*;
 use web_sys::HtmlInputElement;
@@ -11,41 +12,75 @@ use web_sys::HtmlInputElement;
 // Refer to: https://en.wikipedia.org/wiki/Impedance_of_free_space
 const Z_F: f64 = 376.73031366857;
 
-#[wasm_bindgen]
-pub fn show_z(w: f64, h: f64, er: f64) {
+#[wasm_bindgen(start)]
+pub fn init() {
+    const WIDTH: &str = "127";
+    const HEIGHT: &str = "127";
+    const ER: &str = "9.6";
+
     let document = document();
 
-    let set_elem = |elem, s| {
-        document
-            .get_element_by_id(elem)
-            .unwrap()
-            .dyn_ref::<HtmlInputElement>()
-            .unwrap()
-            .set_value(s)
-    };
+    let width = document.get_element_by_id("width").unwrap();
+    let height = document.get_element_by_id("height").unwrap();
+    let er = document.get_element_by_id("er").unwrap();
+
+    width
+        .dyn_ref::<HtmlInputElement>()
+        .unwrap()
+        .set_value(WIDTH);
+    height
+        .dyn_ref::<HtmlInputElement>()
+        .unwrap()
+        .set_value(HEIGHT);
+    er.dyn_ref::<HtmlInputElement>().unwrap().set_value(ER);
+
+    let on_change = move |_: &_| show_z();
+
+    EventListener::new(&width, "change", on_change).forget();
+    EventListener::new(&height, "change", on_change).forget();
+    EventListener::new(&er, "change", on_change).forget();
+    on_change(&web_sys::Event::new("").unwrap());
+}
+
+#[wasm_bindgen]
+pub fn show_z() {
+    let document = document();
+
+    let elem_width = document.get_element_by_id("width").unwrap();
+    let elem_height = document.get_element_by_id("height").unwrap();
+    let elem_er = document.get_element_by_id("er").unwrap();
+
+    let elem_width = elem_width.dyn_ref::<HtmlInputElement>().unwrap();
+    let elem_height = elem_height.dyn_ref::<HtmlInputElement>().unwrap();
+    let elem_er = elem_er.dyn_ref::<HtmlInputElement>().unwrap();
+
+    let w = elem_width.value().parse().unwrap_or_default();
+    let h = elem_height.value().parse().unwrap_or_default();
+    let er = elem_er.value().parse().unwrap_or_default();
+
     let w = if w < 1.0 {
-        set_elem("width", "1");
+        elem_width.set_value("1");
         1.0
     } else if w > 1000.0 {
-        set_elem("width", "1000");
+        elem_width.set_value("1000");
         1000.0
     } else {
         w
     };
     let h = if h < 1.0 {
-        set_elem("height", "1");
+        elem_height.set_value("1");
         1.0
     } else if h > 1000.0 {
-        set_elem("height", "1000");
+        elem_height.set_value("1000");
         1000.0
     } else {
         h
     };
     let er = if er < 1.0 {
-        set_elem("er", "1");
+        elem_er.set_value("1");
         1.0
     } else if er > 30.0 {
-        set_elem("er", "30");
+        elem_er.set_value("30");
         30.0
     } else {
         er

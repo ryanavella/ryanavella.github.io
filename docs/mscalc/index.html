@@ -7,15 +7,11 @@
     content="Calculate characteristic impedance from trace width, substrate thickness, and dielectric constant.">
   <title>Microstrip Impedance Calculator</title>
   <link rel="stylesheet" href="/minimal.css">
-  <link rel="stylesheet" href="/rainbow.min.css">
 </head>
 
 <body>
-  <script src="/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
   <script type="module">
     import init from './mscalc.js';
-
     init();
   </script>
   <main>
@@ -38,7 +34,8 @@
         <output id="z_result" name="z_result" for="width height er"></output>
       </div>
     </div>
-    <br><hr>
+    <br>
+    <hr>
     <p><a href="https://github.com/ryanavella/ryanavella.github.io/blob/main/lib/mscalc">Source code</a></p>
   </main>
 </body>

@@ -14,9 +14,14 @@ const Z_F: f64 = 376.73031366857;
 
 #[wasm_bindgen(start)]
 pub fn init() {
+    use log::Level;
+    
     const WIDTH: &str = "127";
     const HEIGHT: &str = "127";
     const ER: &str = "9.6";
+
+    let () = console_error_panic_hook::set_once();
+    let () = console_log::init_with_level(Level::Debug).unwrap();
 
     let document = document();
 

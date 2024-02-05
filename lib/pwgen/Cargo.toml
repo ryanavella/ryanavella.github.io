@@ -1,9 +1,9 @@
 [package]
-name = "mscalc"
+name = "pwgen"
 version = "0.1.0"
 authors = ["Ryan Avella"]
 edition = "2021"
-description = "Calculate characteristic impedance from trace width, substrate thickness, and dielectric constant."
+description = "Generate secure random passphrases."
 license = "MIT OR Apache-2.0"
 publish = false
 
@@ -13,7 +13,9 @@ crate-type = ["cdylib"]
 [dependencies]
 console_error_panic_hook = "0.1.7"
 console_log = "1.0.0"
+getrandom = { version = "0.2.12", features = ["js"] }
 log = "0.4.20"
+rand = { version = "0.8.5", features = ["getrandom"] }
 wasm-bindgen = "0.2.90"
 
 [dependencies.gloo]

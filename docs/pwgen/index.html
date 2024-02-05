@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Generate secure, random, memorable passphrases.">
+    <title>Passphrase Generator</title>
+    <link rel="stylesheet" href="/minimal.css">
+</head>
+
+<body>
+    <script type="module">
+        import init from './pwgen.js';
+        init();
+    </script>
+    <main>
+        <div>
+            <h1>Passphrase Generator</h1>
+            <div>
+                <label for="words">Words</label>
+                <input class="num" type="number" name="width" id="words" value="7" step="1">
+            </div>
+            <div>
+                <label for="passphrase">Passphrase</label>
+                <output id="passphrase" name="passphrase" for="words"></output>
+            </div>
+            <br>
+            <div>
+                <button type="button" id="regenerate">Regenerate</button>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <p><a href="https://github.com/ryanavella/ryanavella.github.io/blob/main/lib/pwgen">Source code</a></p>
+    </main>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = "0.2.89"
+wasm-bindgen = "0.2.90"
 
 [dependencies.gloo]
 version =  "0.11.0"
@@ -21,4 +21,4 @@ features = [
 ]
 
 [dependencies.web-sys]
-version = "0.3.66"
+version = "0.3.67"

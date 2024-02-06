@@ -18,19 +18,26 @@
             <h1>Passphrase Generator</h1>
             <div>
                 <label for="words">Words</label>
-                <input class="num" type="number" name="width" id="words" value="7" step="1">
+                <input class="num" type="number" name="width" id="words" value="6" step="1">
             </div>
             <div>
                 <label for="passphrase">Passphrase</label>
                 <output id="passphrase" name="passphrase" for="words"></output>
             </div>
-            <br>
             <div>
                 <button type="button" id="regenerate">Regenerate</button>
+            </div>
+            <div>
+                <label for="strength">Strength</label>
+                <output id="strength" name="strength" for="words"></output>
             </div>
         </div>
         <br>
         <hr>
+        <div>
+            <p>*Using a AMD RX 6800 XT, which (as of early 2024) <a href="https://www.amazon.com/dp/B08TJ2BHCQ/">can be purchased for $630 on Amazon</a> and can <a href="https://gist.github.com/epixoip/99085955a1145ff61ec83512a50421a7">compute 20 million SHA-1 hashes per second</a>.</p>
+            <p>**Using 100 of these same AMD GPUs, costing about $63,000.</p>
+        </div>
         <p><a href="https://github.com/ryanavella/ryanavella.github.io/blob/main/lib/pwgen">Source code</a></p>
     </main>
 </body>

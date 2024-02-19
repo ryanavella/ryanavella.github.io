@@ -14,7 +14,7 @@ crate-type = ["cdylib"]
 console_error_panic_hook = "0.1.7"
 console_log = "1.0.0"
 log = "0.4.20"
-wasm-bindgen = "0.2.90"
+wasm-bindgen = "0.2.91"
 
 [dependencies.gloo]
 version =  "0.11.0"
@@ -24,4 +24,4 @@ features = [
 ]
 
 [dependencies.web-sys]
-version = "0.3.67"
+version = "0.3.68"

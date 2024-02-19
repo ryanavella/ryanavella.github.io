@@ -73,8 +73,8 @@ pub fn regenerate() {
     let strong = Seconds::good_hw(word_count);
 
     let mut desc = String::new();
-    writeln!(&mut desc, "<p>An adversary on a budget* could crack this password in <b>{weak}</b>.</p>").unwrap();
-    writeln!(&mut desc, "<p>A well-funded adversary** could crack this password in <b>{strong}</b>.</p>").unwrap();
+    writeln!(&mut desc, "<p>An adversary on a budget* could crack this password in <nobr><b>{weak}</b></nobr>.</p>").unwrap();
+    writeln!(&mut desc, "<p>A well-funded adversary** could crack this password in <nobr><b>{strong}</b></nobr>.</p>").unwrap();
     el_strength.set_inner_html(&desc)
     /*
     adversary
